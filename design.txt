@@ -1,0 +1,18 @@
+Mastermind Design 
+
+The project Mastermind is structured with the following parts:
+1. A GameSettings class that is responsible for managing the game settings for the mastermind game. It contains methods to capture errors, load files, record and renew player records, create and draw marbles, and process the drawing after clicking the check buttons;
+2. A GameLogic class that evaluates the player’s guesses in the game;
+3. A TestGame class that contains a method to test the logic of the game
+4. A Marble class that can draw an empty Marble and set its color, get its color, erase itself, and determine if it has been clicked;
+5. A Point class that represents a geometric point with x and y coordinates;
+6. A CheckButton class that can draw a check button and determine if it has been clicked;
+7. A Message class that can display and clear a message picture;
+8. A MovingPointer class that represents a moving pointer that can move vertically as the player proceeds to the next round;
+9. A group of message gifs to display;
+10. A configuration file that contains the default user name and colors;
+11. A leaderboard.txt file to record and renew player records, and a mastermind_errors.err file to record the errors encountered by the program.
+
+This project uses an object-oriented approach to design. The tests are written using Python unittest framework. There are two test cases in the test: The first test case checks a scenario with no correct placements and two correct colors in the wrong positions. The second test case checks a scenario with one correct placement and one correct color in the wrong position. They test the game logic’s ability to differentiate between correct guesses and half-correct guesses.
+
+One of the major challenges I encountered was how to present the logical structure clearly, especially for the click functions. In the beginning, I only had one single on_click() function that enclosed everything (drawing, appending indices, message popups, checking results, etc). This function became overly complex, with a lot of loops and deep nesting, which made debugging minor issues quite difficult. It was after I roughly addressed the issues in this function that I began to break it down into smaller functions. I also didn’t separate the logic operations from the drawing functions at first, so after I basically finished writing the program, I found that I had to extract the logic part, otherwise it would be very hard to write a test. For future projects, I think it’s important for me to focus on creating small and concise functions at first so that next time I won’t spend too much time in the debugging process. I also need to utilize flowcharts more to aid in the design process to prevent myself from getting lost when dealing with more complex logic later on.
